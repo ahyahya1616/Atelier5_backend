@@ -1,0 +1,93 @@
+###############################################
+# STATIONS API
+###############################################
+
+### GET toutes les stations
+GET http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/stations
+Accept: application/json
+
+### GET une station par ID
+GET http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/stations/1
+Accept: application/json
+
+### POST créer une nouvelle station
+POST http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/stations
+Content-Type: application/json
+
+{
+  "nom": "Station Centrale",
+  "ville": "Tanger",
+  "adresse": "Boukhalef"
+}
+
+### PUT mettre à jour une station
+PUT http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/stations
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nom": "Station Centrale Modifiée",
+  "ville": "Casablanca"
+}
+
+### DELETE supprimer une station
+DELETE http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/stations/3
+
+
+###############################################
+# CARBURANTS API
+###############################################
+
+### GET tous les carburants
+GET http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/carburants
+Accept: application/json
+
+### POST ajouter un carburant
+POST http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/carburants
+Content-Type: application/json
+
+{
+  "nom": "Essence",
+  "description": "Carburant classique"
+}
+
+### PUT mettre à jour un carburant
+PUT http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/carburants
+Content-Type: application/json
+
+{
+  "id": 1,
+  "nom": "Diesel",
+  "description": "Carburant Diesel"
+}
+
+### DELETE supprimer un carburant
+DELETE http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/carburants/2
+
+
+###############################################
+# HISTOCARB API
+###############################################
+
+### POST ajouter un HistoCarb
+POST http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/histocarb
+Content-Type: application/json
+
+{
+  "stationId": 1,
+  "carburantId": 1,
+  "date": "2025-11-03T12:00:00",
+  "prix": 12.5
+}
+
+
+### GET HistoCarb par station
+GET http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/histocarb/station/1
+Accept: application/json
+
+### GET HistoCarb par station et carburant
+GET http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/histocarb/station/1/carburant/1
+Accept: application/json
+
+### DELETE un HistoCarb
+DELETE http://localhost:8080/Atelier5_backend-1.0-SNAPSHOT/api/histocarb/1
