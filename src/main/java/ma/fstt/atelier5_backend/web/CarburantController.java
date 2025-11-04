@@ -21,6 +21,14 @@ public class CarburantController {
         return carburantService.getAllCarburants();
     }
 
+    @GET
+    @Path("/{id}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public CarburantDTO getById(@PathParam("id") Long id) {
+        return carburantService.getCarburant(id); // peut renvoyer null si pas trouvé
+    }
+
+
     @POST
     public void add(CarburantDTO c) {
         carburantService.addCarburant(c);
